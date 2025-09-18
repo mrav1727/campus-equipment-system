@@ -24,5 +24,16 @@ public class LoanController {
     public LoanReturnResponse returnLoan(@PathVariable Long id) {
         return loanService.returnLoan(id);
     }
+
+    @GetMapping("/{id}")
+    public LoanReturnResponse getLoanById(@PathVariable Long id) {
+        return loanService.getLoanById(id);
+    }
+
+    @PutMapping("/{id}")
+    public LoanReturnResponse updateLoan(@PathVariable Long id, @RequestBody CreateLoanRequest request) {
+        return loanService.updateLoan(id, request);
+    }
+
 }
 
