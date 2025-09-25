@@ -6,7 +6,7 @@ import edu.cit.veloso.miguelray.campusequipmentloan.service.LoanService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/loans")
+@RequestMapping("/loan")
 public class LoanController {
 
     private final LoanService loanService;
@@ -34,6 +34,12 @@ public class LoanController {
     public LoanReturnResponse updateLoan(@PathVariable Long id, @RequestBody CreateLoanRequest request) {
         return loanService.updateLoan(id, request);
     }
+
+    @GetMapping
+    public String testLoanEndpoint() {
+        return "Loan API is working!";
+    }
+
 
 }
 
